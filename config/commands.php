@@ -1,5 +1,7 @@
 <?php
 
+use Laravel\Tinker\Console\TinkerCommand;
+
 return [
 
     /*
@@ -40,7 +42,12 @@ return [
     */
 
     'add' => [
-        // ..
+        TinkerCommand::class,
+        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
+        Symfony\Component\Console\Command\HelpCommand::class,
+        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
+        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
+        Illuminate\Foundation\Console\VendorPublishCommand::class,
     ],
 
     /*
@@ -55,11 +62,7 @@ return [
     */
 
     'hidden' => [
-        NunoMaduro\LaravelConsoleSummary\SummaryCommand::class,
-        Symfony\Component\Console\Command\HelpCommand::class,
-        Illuminate\Console\Scheduling\ScheduleRunCommand::class,
-        Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
-        Illuminate\Foundation\Console\VendorPublishCommand::class,
+
     ],
 
     /*
